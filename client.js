@@ -23,6 +23,7 @@ Client.prototype.connect = function(){
     self.db = multilevel.client(manifest,config.options)
     self.dbcon = net.connect(config.port,function(con){
       console.log('Connected to server on', config.port)
+      self.dbcon.pipe(self.db.createRpcStream()).pipe(self.dbcon)
     })
     .on('error',function(err){
       console.log(err)
@@ -30,7 +31,6 @@ Client.prototype.connect = function(){
         setTimeout(_connect,1000)
       }
     })
-    self.dbcon.pipe(self.db.createRpcStream()).pipe(self.dbcon)
   }
   _connect()
   return self
