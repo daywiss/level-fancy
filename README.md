@@ -1,4 +1,2 @@
-level-fancy
-===========
+Custom level db database configuration with server and client. Uses multi-level for multiple tcp client connections, sublevel for key organization, and livestream for pub/sub functionality.
 
-LevelUP with some useful plugins and wrapped to get a leveldb database up and started quickly.
