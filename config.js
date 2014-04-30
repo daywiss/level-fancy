@@ -1,5 +1,5 @@
 //options for connecting to a level-fancy database
 module.exports = {
   port:97892
-  ,manifest:'/tmp/scada-manifest.json'
+  ,manifest:'/tmp/fancy-manifest.json'
 }
