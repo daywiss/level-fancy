@@ -1,10 +1,8 @@
 var assert = require('assert')
 var fancy = require('..')
-var server = new fancy.Server()
 var client1 = new fancy.Client()
 var client2 = new fancy.Client()
 
-server.start()
 var db1 = client1.connect().db
 var db2 = client2.connect().db
 
@@ -16,6 +14,5 @@ db2.get('key',function(err,data){
   //console.log(data)
   db1.close()
   db2.close()
-  server.close()
 })
 

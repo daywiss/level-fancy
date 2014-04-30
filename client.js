@@ -2,6 +2,7 @@
 var defaults = require('./config')
 var net = require('net')
 var multilevel = require('multilevel')
+var argv = require('minimist')(process.argv.slice(2))
 
 function Client(config){
   this.config = config
@@ -37,3 +38,11 @@ Client.prototype.connect = function(){
 }
 
 module.exports = Client
+
+if(argv.start){
+  var config = defaults
+  if(typeof argv.start === 'string'){
+    config = require(argv.start)
+  }
+  new Client(config).connect()
+}
