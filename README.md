@@ -2,7 +2,7 @@
 Custom [leveldb](https://github.com/rvagg/node-levelup) database configuration with server and client for Node. Uses [multi-level](https://github.com/juliangruber/multilevel) 
 for multiple tcp client connections, [sublevel](https://github.com/dominictarr/level-sublevel) for key organization, 
 [level-live-stream](https://github.com/dominictarr/level-live-stream) for pub/sub functionality,
-[level-sec](https://github.com/juliangruber/level-sec/blob/master/test/sec.js) for secondary indexes,
+[level-sec](https://github.com/juliangruber/level-sec) for secondary indexes,
 and [memdown](https://github.com/rvagg/memdown) for optional in memory data storage. 
 
 ##Status
