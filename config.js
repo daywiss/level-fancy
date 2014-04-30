@@ -10,7 +10,7 @@ module.exports = {
   //passes configuration options when starting leveldb
   ,options:{
     valueEncoding:'json'
-    //db:require('memdown') //uncomment to use in memory storage. Will ignore database option.
+    ,db:require('memdown') //uncomment to use in memory storage. Will ignore database option.
   }
   //Define sublevels and secondary indexes here. Follow example conventions.
   //Uses sublevel and level-sec: 

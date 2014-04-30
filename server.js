@@ -9,8 +9,7 @@ var LiveStream = require('level-live-stream')
 
 
 function Server(config){
-  this.config = config
-  if(this.config == null) this.config = defaults
+  this.config = config || defaults
   this.db = null
 }
 
