@@ -22,15 +22,18 @@ Client.prototype.connect = function(){
   function _connect(){
     self.status = 'open'
     self.db = multilevel.client(manifest,config.options)
-    self.dbcon = net.connect(config.port,function(con){
-      console.log('Connected to server on', config.port)
+    self.dbcon = net.connect(config,function(con){
+      console.log('Connected to multilevel on', config.port)
       self.dbcon.pipe(self.db.createRpcStream()).pipe(self.dbcon)
     })
-    .on('error',function(err){
+    self.dbcon.on('error',function(err){
       console.log(err)
       if(this.status === 'open'){
         setTimeout(_connect,1000)
       }
+    })
+    self.dbcon.on('close', function () {
+        console.log('Multilevel connection closed')
     })
   }
   _connect()
