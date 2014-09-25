@@ -1,6 +1,6 @@
 {
   "name": "level-fancy",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A leveldb multi-level client for connecting to a level-fancy-server.",
   "main": "index.js",
   "scripts": {
