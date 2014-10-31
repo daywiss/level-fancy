@@ -27,9 +27,9 @@ Client.prototype.connect = function(){
       self.dbcon.pipe(self.db.createRpcStream()).pipe(self.dbcon)
     })
     self.dbcon.on('error',function(err){
-      console.log(err)
-      if(this.status === 'open'){
-        setTimeout(_connect,1000)
+      console.log('status: '+ self.status + '\n' +err +'\nconfig: ')
+      if(self.status === 'open' && config.hasOwnProperty('reconnectTimeout')){
+        setTimeout(_connect, config.reconnectTimeout)
       }
     })
     self.dbcon.on('close', function () {

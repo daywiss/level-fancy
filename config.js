@@ -2,4 +2,5 @@
 module.exports = {
   port:97892
   ,manifest:'/tmp/fancy-manifest.json'
+  ,reconnectTimeout: 3000
 }
