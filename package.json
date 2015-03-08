@@ -1,6 +1,6 @@
 {
   "name": "level-fancy",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A leveldb multi-level client for connecting to a level-fancy-server.",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/daywiss/level-fancy",
   "dependencies": {
-    "multilevel": "^6.0.1",
-    "minimist": "0.0.8"
+    "multilevel": "^6.1.0",
+    "minimist": "1.1.0"
   }
 }
